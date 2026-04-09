@@ -1,0 +1,89 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Arena Pro</title>
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+</head>
+<body>
+
+    <nav>
+        <div class="menu-container">
+            <div class="logo">Arena Pro</div>
+            
+            <ul class="nav-links">
+                <li><a href="#torneo">Torneo</a></li>
+                <li><a href="#resultados">Tabla de Resultados</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="welcome-section">
+        <h1>Bienvenido al Panel de Control</h1>
+        <p>Selecciona una opción del menú para navegar por la competición.</p>
+
+        <h1 id="torneo">LISTA DE EQUIPOS</h1>
+
+        <div class="teams-container">
+            <div class="team-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="PSG">
+                <p>PSG</p>
+            </div>
+            <div class="team-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" alt="Bayern">
+                <p>BAYERN</p>
+            </div>
+            <div class="team-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg" alt="Athletic">
+                <p>ATHLETIC</p>
+            </div>
+            <div class="team-card">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="Chelsea">
+                <p>CHELSEA</p>
+            </div>
+            <section id="resultados" class="results-section">
+        <h2>Resultados Recientes</h2>
+
+        <div class="match-card">
+            <div class="team-info">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" class="team-mini-logo" alt="PSG">
+                <span>PSG</span>
+            </div>
+            
+            <div style="text-align: center;">
+                <div class="score">2 - 1</div>
+                <div class="match-status">Finalizado</div>
+            </div>
+
+            <div class="team-info right">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" class="team-mini-logo" alt="Bayern">
+                <span>BAYERN</span>
+            </div>
+        </div>
+
+        <div class="match-card">
+            <div class="team-info">
+                <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg" class="team-mini-logo" alt="Athletic">
+                <span>ATHLETIC</span>
+            </div>
+            
+            <div style="text-align: center;">
+                <div class="score">0 - 0</div>
+                <div class="match-status">En Juego</div>
+            </div>
+
+            <div class="team-info right">
+                <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" class="team-mini-logo" alt="Chelsea">
+                <span>CHELSEA</span>
+            </div>
+        </div>
+
+    </section>
+        </div>
+    </main>
+
+</body>
+</html>
