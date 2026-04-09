@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Tabla de posiciones</h2>
+
+<table border="1">
+
+<tr>
+<th>Equipo</th>
+<th>PJ</th>
+<th>PG</th>
+<th>PE</th>
+<th>PP</th>
+<th>PTS</th>
+</tr>
+
+{% for equipo,datos in tabla.items %}
+
+<tr>
+<td>{{equipo}}</td>
+<td>{{datos.pj}}</td>
+<td>{{datos.pg}}</td>
+<td>{{datos.pe}}</td>
+<td>{{datos.pp}}</td>
+<td>{{datos.pts}}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+</body>
+</html>

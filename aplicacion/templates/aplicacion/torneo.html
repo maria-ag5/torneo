@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <h2>Registrar resultados</h2>
+
+    {% for p in partidos %}
+
+    <form method="POST">
+    {% csrf_token %}
+
+    {{p.equipoA}}
+
+    <input type="number" name="golesA" required>
+
+    vs
+
+    <input type="number" name="golesB" required>
+
+    {{p.equipoB}}
+
+    <input type="hidden" name="index" value="{{forloop.counter0}}">
+
+    <button type="submit">Guardar</button>
+
+    </form>
+
+    <br>
+
+    {% endfor %}
+</body>
+</html>
