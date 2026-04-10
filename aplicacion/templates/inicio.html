@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arena Pro - Iniciar Sesión</title>
+    <title>Arena Pro - Inicio Sesión</title>
     <link rel="stylesheet" href="{% static 'estilo.css' %}">
 </head>
 <body>
@@ -13,13 +13,13 @@
         <div class="logo">ARENA PRO</div>
     </header>
 
-    <div class="login-card">
+    <div class="inicio_con">
         <h2>Iniciar Sesión</h2>
 
         <form method="POST">
             {% csrf_token %}
 
-            <input type="text" name="user" placeholder="Usuario" required>
+            <input type="text" name="username" placeholder="Usuario" required>
             
             <input type="password" name="password" placeholder="Contraseña" required>
             
