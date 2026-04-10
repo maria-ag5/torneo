@@ -1,36 +1,100 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+<meta charset="UTF-8">
+<title>Torneo</title>
+
+<link rel="stylesheet" href="{% static 'css/torneo.css' %}">
+
 </head>
+
 <body>
-        <h2>Registrar resultados</h2>
 
-    {% for p in partidos %}
+<h1>Registrar Resultados</h1>
 
-    <form method="POST">
-    {% csrf_token %}
+<a href="{% url 'tabla' %}">Ver tabla de posiciones</a>
 
-    {{p.equipoA}}
+<br><br>
 
-    <input type="number" name="golesA" required>
+<form method="POST">
+{% csrf_token %}
+<button name="reset" value="1">Reiniciar Torneo</button>
+</form>
 
-    vs
+<br><br>
 
-    <input type="number" name="golesB" required>
+{% for p in partidos %}
 
-    {{p.equipoB}}
+<form method="POST">
 
-    <input type="hidden" name="index" value="{{forloop.counter0}}">
+{% csrf_token %}
 
-    <button type="submit">Guardar</button>
+{{ p.equipo_a.nombre }}
 
-    </form>
+<input
+type="number"
+name="goles_a"
+min="0"
+class="gol-input"
+data-id="{{ p.id }}a"
+value="{% if p.jugado %}{{ p.goles_a }}{% endif %}"
+{% if p.jugado %}disabled{% endif %}
+>
 
-    <br>
+VS
 
-    {% endfor %}
+<input
+type="number"
+name="goles_b"
+min="0"
+class="gol-input"
+data-id="{{ p.id }}b"
+value="{% if p.jugado %}{{ p.goles_b }}{% endif %}"
+{% if p.jugado %}disabled{% endif %}
+>
+
+{{ p.equipo_b.nombre }}
+
+<input type="hidden" name="partido_id" value="{{ p.id }}">
+
+{% if not p.jugado %}
+
+<button type="submit">Guardar</button>
+
+{% else %}
+
+✔ Guardado
+
+{% endif %}
+
+</form>
+
+<br>
+
+{% endfor %}
+
+<script>
+
+/* guardar valores en memoria */
+
+document.querySelectorAll(".gol-input").forEach(input => {
+
+    const key = input.dataset.id
+
+    if(localStorage.getItem(key)){
+        input.value = localStorage.getItem(key)
+    }
+
+    input.addEventListener("input", () => {
+        localStorage.setItem(key, input.value)
+    })
+
+})
+
+</script>
+
 </body>
 </html>

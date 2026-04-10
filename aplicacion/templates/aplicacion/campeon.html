@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Resultados del Campeonato</title>
+
+<link rel="stylesheet" href="{% static 'css/torneo.css' %}">
+
+</head>
+
+<body>
+
+<div class="campeon-container">
+
+<h1>🏆 Resultados del Campeonato</h1>
+
+<table class="tabla">
+
+<tr>
+<th>Posición</th>
+<th>Equipo</th>
+<th>Puntos</th>
+</tr>
+
+{% for e in tabla %}
+
+<tr>
+
+<td>{{ forloop.counter }}°</td>
+<td>{{ e.equipo }}</td>
+<td>{{ e.pts }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<a href="{% url 'tabla' %}">
+Volver a la tabla
+</a>
+
+</div>
+
+</body>
+</html>
