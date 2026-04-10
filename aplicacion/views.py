@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+
 from .models import Equipo, Partido
 from django.db.models import Q
 import itertools
@@ -149,3 +150,16 @@ def campeon(request):
     return render(request,"aplicacion/campeon.html",{
         "tabla": tabla
     })
+
+def inicio(request):
+    if request.method == "POST":
+        user=request.POST.get("username")
+        password=request.POST.get("password")
+    
+        if user== "cosita" and password == "1234":
+            return redirect("home")
+        else:
+            return render(request, "inicio.html", {"error": "Datos incorrectos"})
+
+    return render(request, "inicio.html")
+
