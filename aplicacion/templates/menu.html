@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo Arena Pro</title>
+    <link rel="stylesheet" href="{% static 'menu.css' %}">
+</head>
+<body>
+
+    <nav>
+        <div class="menu-container">
+            <div class="logo">ARENA PRO</div>
+            <ul class="nav-links">
+                <li><a href="{% templates 'torneo.html'%}">Torneo</a></li>
+                <li><a href="#resultados">Tabla de Resultados</a></li>
+                <li><a href="#equipo">Equipo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <header class="welcome-header">
+            <h1>Bienvenido al Panel de Control</h1>
+            <p>Selecciona una opción del menú para navegar por la competición.</p>
+        </header>
+
+        <section id="torneo" class="content-block">
+            <h2 class="block-title">LISTA DE EQUIPOS</h2>
+            <div class="teams-grid">
+                <div class="team-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="PSG">
+                    <p>PSG</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" alt="Bayern">
+                    <p>BAYERN</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg" alt="Athletic">
+                    <p>ATHLETIC</p>
+                </div>
+                <div class="team-card">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="Chelsea">
+                    <p>CHELSEA</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="resultados" class="content-block">
+            <div class="results-container">
+                <h2 class="block-title">RESULTADOS RECIENTES</h2>
+                
+                <div class="match-list">
+                    <div class="match-item">
+                        <div class="team-info">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg" alt="PSG">
+                            <span>PSG</span>
+                        </div>
+                        <div class="match-center">
+                            <div class="score-badge">2 - 1</div>
+                            <small class="status">FINALIZADO</small>
+                        </div>
+                        <div class="team-info reverse">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/FC_Bayern_M%C3%BCnchen_logo_%282017%29.svg" alt="Bayern">
+                            <span>BAYERN</span>
+                        </div>
+                    </div>
+
+                    <div class="match-item">
+                        <div class="team-info">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Club_Athletic_Bilbao_logo.svg" alt="Athletic">
+                            <span>ATHLETIC</span>
+                        </div>
+                        <div class="match-center">
+                            <div class="score-badge">0 - 0</div>
+                            <small class="status">FINALIZADO</small>
+                        </div>
+                        <div class="team-info reverse">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg" alt="Chelsea">
+                            <span>CHELSEA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

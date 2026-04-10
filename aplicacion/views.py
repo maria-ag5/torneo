@@ -1,9 +1,28 @@
 from django.shortcuts import render, redirect
 
+
 from .models import Equipo, Partido
 from django.db.models import Q
 import itertools
 import random
+
+def menu_view(request):
+    return render(request, 'menu.html')
+# equipos del torneo
+equipos = ["PSG", "Bayer", "Athletic", "Chelsea"]
+
+# generar partidos una sola vez
+partidos = []
+
+for i in range(len(equipos)):
+    for j in range(i + 1, len(equipos)):
+        partidos.append({
+            "equipoA": equipos[i],
+            "equipoB": equipos[j],
+            "golesA": "",
+            "golesB": ""
+        })
+
 
 
 def torneo(request):
@@ -80,6 +99,7 @@ def tabla(request):
             if p.goles_a == p.goles_b:
                 pe += 1
                 pts += 1
+                
 
             elif p.equipo_a == equipo and p.goles_a > p.goles_b:
                 pg += 1
@@ -161,5 +181,6 @@ def inicio(request):
         else:
             return render(request, "inicio.html", {"error": "Datos incorrectos"})
 
-    return render(request, "inicio.html")
+
+    return render(request,"aplicacion/tabla.html",{"tabla":tabla})
 

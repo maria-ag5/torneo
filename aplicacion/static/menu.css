@@ -1,0 +1,209 @@
+:root {
+    --azul-oscuro: #1b263b;
+    --azul-brand: #e63946; /* Color para el logo Arena Pro */
+    --blanco: #ffffff;
+    --gris-fondo: #f0f2f5;
+    --sombra: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--gris-fondo);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navegación */
+nav {
+    background-color: var(--azul-oscuro);
+    padding: 1rem 5%;
+    color: white;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--azul-brand);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* Contenido Principal */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.welcome-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.welcome-header h1 {
+    font-size: 2rem;
+    color: #1a1a1a;
+}
+
+.content-block {
+    width: 100%;
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.block-title {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+/* Grid de Equipos */
+.teams-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    background: white;
+    width: 140px;
+    padding: 25px 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px var(--sombra);
+    transition: transform 0.2s;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+}
+
+.team-card img {
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.team-card p {
+    font-weight: bold;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* Contenedor de Resultados (Caja blanca) */
+.results-container {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px var(--sombra);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.match-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.match-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.match-item:last-child {
+    border-bottom: none;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 35%;
+}
+
+.team-info.reverse {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+.team-info img {
+    width: 35px;
+    height: 35px;
+}
+
+.team-info span {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.match-center {
+    width: 30%;
+    text-align: center;
+}
+
+.score-badge {
+    background: #2b2d42;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.status {
+    display: block;
+    font-size: 0.7rem;
+    margin-top: 5px;
+    color: #888;
+    font-weight: bold;
+}
+
+.status.playing {
+    color: #e63946;
+}
+
+
+@media (max-width: 600px) {
+    .match-item {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .team-info {
+        width: 100%;
+        justify-content: center;
+    }
+}
