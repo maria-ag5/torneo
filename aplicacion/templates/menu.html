@@ -13,9 +13,9 @@
         <div class="menu-container">
             <div class="logo">ARENA PRO</div>
             <ul class="nav-links">
-                <li><a href="{% templates 'torneo.html'%}">Torneo</a></li>
-                <li><a href="#resultados">Tabla de Resultados</a></li>
-                <li><a href="#equipo">Equipo</a></li>
+                <li><a href="{% url 'torneo' %}">Torneo</a></li>
+                <li><a href="{% url 'tabla' %}">Tabla de Resultados</a></li>
+                <li><a href="{% url 'campeon' %}">Resultados</a></li>
             </ul>
         </div>
     </nav>

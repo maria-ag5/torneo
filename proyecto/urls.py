@@ -21,4 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('menu/', include('aplicacion.urls')),
     path('', include('aplicacion.urls')),
+    path('torneo', include('aplicacion.urls')),
+    path('tabla', include('aplicacion.urls')),
+    path('campeon', include('aplicacion.urls')),
+
 ]
